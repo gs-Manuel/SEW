@@ -39,7 +39,11 @@
         <source media="(min-width: 800px)" srcset="multimedia/FotoRetrato800.jpg" />
         <img src="multimedia/FotoRetrato800.jpg" alt="FotoRetrato" />
     </picture>
-    <video src="multimedia/Vazquez.mp4" controls preload="auto"></video>
+    <video 
+        controls preload="auto">
+        <source src="multimedia/Vazquez.mp4" type="video/mp4">
+        <source src="multimedia/Vazquez.webm" type="video/webm">
+    </video>
     <audio src="multimedia/audioCharly.opus" controls></audio>
     <h3>Lista de aficiones</h3>
     <ul>
