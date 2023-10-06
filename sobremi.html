@@ -17,138 +17,151 @@
     <!-- Datos con el contenidos que aparece en el navegador -->
     <header>
         <h1>Escritorio Virtual</h1>
+        <nav>
+            <a tabindex="1" accesskey="e" href="index.html">Escritorio Virtual</a>
+            <a tabindex="2" accesskey="s" href="sobremi.html">Sobre mí</a>
+            <a tabindex="3" accesskey="n" href="noticias.html">Noticias</a>
+            <a tabindex="4" accesskey="a" href="agenda.html">Agenda</a>
+            <a tabindex="5" accesskey="m" href="metereologia.html">Metereología</a>
+            <a tabindex="6" accesskey="v" href="viajes.html">Viajes</a>
+            <a tabindex="7" accesskey="j" href="juegos.html">Juegos</a>
+        </nav>
     </header>
-    <nav>
-        <a tabindex="1" accesskey="e" href="index.html">Escritorio Virtual</a>
-        <a tabindex="2" accesskey="s" href="sobremi.html">Sobre mí</a>
-        <a tabindex="3" accesskey="n" href="noticias.html">Noticias</a>
-        <a tabindex="4" accesskey="a" href="agenda.html">Agenda</a>
-        <a tabindex="5" accesskey="m" href="metereologia.html">Metereología</a>
-        <a tabindex="6" accesskey="v" href="viajes.html">Viajes</a>
-        <a tabindex="7" accesskey="j" href="juegos.html">Juegos</a>
-    </nav>
     <main>
         <h2>Sobre Mí</h2>
-        <h3>Información Personal</h3>
-        <p>Nombre y Apellidos:  Manuel González Santos </p>
-        <p>UO: UO279387</p>
-        <p>Correo Electrónico: gs_manuel@outlook.es</p>
-        <p>Presentación: Estudiante de la Escuela de Ingeniería Informática(EII) 
-            de la Universidad de Oviedo</p>
-        <h3>Contenido Multimedia</h3>
-        <picture>
-            <source media="(max-width: 465px)" srcset="multimedia/imagenes/FotoRetrato465.jpg" />
-            <source media="(max-width: 799px)" srcset="multimedia/imagenes/FotoRetrato799.jpg" />
-            <source media="(min-width: 800px)" srcset="multimedia/imagenes/FotoRetrato800.jpg" />
-            <img src="multimedia/imagenes/FotoRetrato800.jpg" alt="FotoRetrato" />
-        </picture>
-        <video 
-            controls preload="auto">
-            <source media="(max-Width:499px)" src="multimedia/VazquezMovil.mp4" type="video/mp4" />
-            <source media="(min-Width:500px)" src="multimedia/VazquezOrdenador.mp4" type="video/mp4" />
-            <source media="(max-Width:499px)" src="multimedia/VazquezMovil.webm" type="video/webm" />
-            <source media="(min-Width:500px)" src="multimedia/VazquezOrdenador.webm" type="video/webm" />
-            <video src="multimedia/VazquezOrdenador.mp4" alt="Video de Presentación" />
-        </video>
-        <audio src="multimedia/audioCharly.opus" controls></audio>
-        <h3>Lista de aficiones</h3>
-        <ul>
-            <li>Hacer Deportes
-                <ol>
-                    <li>Jugar al fútbol</li>
-                    <li>Pádel</li>
-                    <li>Tenis</li>
-                    <li>Levantar pesas</li>
-                </ol>
-            </li>
-            <li>Jugar videojuegos
-                <ol>
-                    <li>Age of Empires II</li>
-                    <li>Slay the Spire</li>
-                    <li>The Binding of Isaac</li>
-                    <li>Hades</li>
-                </ol>
-            </li>
-            <li>Jugar juegos de mesa
-                <ol>
-                    <li>BANG!</li>
-                    <li>Munchkin</li>
-                    <li>Catan</li>
-                    <li>Dixit</li>
-                    <li>Monopoly</li>
-                    <li>Tute</li>
-                </ol>
-        </li>   
-            <li>Cocinar principalmente platos salados
-                <ol>
-                    <li>Lasagna alla bolognesa</li>
-                    <li>Spaghetti alla carbonara</li>
-                    <li>Arroz frito </li>
-                </ol>
-            </li>
-            <li>Planes con amigos
-                <ol>
-                    <li>Ruta por el monte</li>
-                    <li>Acampar bajo las estrellas</li>
-                    <li>Ir de bares</li>
-                </ol>
-            </li>
-        </ul>
-        <h3>Lista de grupos musicales</h3>
-        <ol>
-            <li>Ctangana
-                <ul>
-                    <li>Un Veneno</li>
-                    <li>Ingobernable</li>
-                    <li>Tu me dejaste de querer</li>
-                    <li>Demasiadas Mujeres</li>
-                </ul>
-            </li>
-            <li>Estopa
-                <ul>
-                    <li>Vino tinto</li>
-                    <li>Por la raja de tu falda</li>
-                    <li>Como Camarón</li>
-                    <li>Diablo</li>
-                    <li>El Run Run</li>
-                    <li>Camiseta de Rokanrol</li>
-                </ul>
-            </li>
-            <li>Melendi
-                <ul>
-                    <li>Barbie de extrarradio</li>
-                    <li>Tu jardín con enanitos</li>
-                    <li>Con la luna llena</li>
-                    <li>Caminando por la vida</li>
-                </ul>
-            </li>
-            <li>Astola
-                <ul>
-                    <li>Ermitaño</li>
-                    <li>Ventanilla</li>
-                    <li>Cojo el Saco y me retiro</li>
-                    <li>No hay miedo</li>
-                </ul>
-            </li>
-            <li>Nikone
-                <ul>
-                    <li>Lo Real</li>
-                    <li>Horizonte</li>
-                    <li>Blanco y negro</li>
-                    <li>Qué más da</li>
-                    <li>Puñales</li>
-                    <li>Boom Boom Clap</li>
-                </ul>
-            </li>
-        </ol>
+        <section>
+            <h3>Información Personal</h3>
+            <p>Nombre y Apellidos:  Manuel González Santos </p>
+            <p>UO: UO279387</p>
+            <p>Correo Electrónico: gs_manuel@outlook.es</p>
+            <p>Presentación: Estudiante de la Escuela de Ingeniería Informática(EII) 
+                de la Universidad de Oviedo</p>
+        </section>
+        <section>
+            <h3>Contenido Multimedia</h3>
+            <picture>
+                <!--No se puede utilizar el atributo .width o .height.
+                     Sería mezclar contenido con visualización => No se evaluado en practicas-->
+                <source media="(max-width: 465px)" srcset="multimedia/imagenes/FotoRetrato465.jpg" />
+                <source media="(max-width: 799px)" srcset="multimedia/imagenes/FotoRetrato799.jpg" />
+                <source media="(min-width: 800px)" srcset="multimedia/imagenes/FotoRetrato800.jpg" />
+                <img src="multimedia/imagenes/FotoRetrato800.jpg" alt="FotoRetrato" />
+            </picture>
+            <video controls preload="auto">
+                <source src="multimedia/VazquezMovil.mp4" type="video/mp4" />
+                <source src="multimedia/VazquezMovil.webm" type="video/webm" />
+            </video>
+            <audio>
+                <source src="multimedia/audioCharly.mp3" type="audio/mp3" />
+                <source src="multimedia/audioCharly.opus" type="audio/opus" />
+                <source src="multimedia/audioCharly.wav" type="audio/wav" />
+            </audio>
+        </section>
+        <section>
+            <h3>Lista de aficiones</h3>
+            <ul>
+                <li>Hacer Deportes
+                    <ol>
+                        <li>Jugar al fútbol</li>
+                        <li>Pádel</li>
+                        <li>Tenis</li>
+                        <li>Levantar pesas</li>
+                    </ol>
+                </li>
+                <li>Jugar videojuegos
+                    <ol>
+                        <li>Age of Empires II</li>
+                        <li>Slay the Spire</li>
+                        <li>The Binding of Isaac</li>
+                        <li>Hades</li>
+                    </ol>
+                </li>
+                <li>Jugar juegos de mesa
+                    <ol>
+                        <li>BANG!</li>
+                        <li>Munchkin</li>
+                        <li>Catan</li>
+                        <li>Dixit</li>
+                        <li>Monopoly</li>
+                        <li>Tute</li>
+                    </ol>
+            </li>   
+                <li>Cocinar principalmente platos salados
+                    <ol>
+                        <li>Lasagna alla bolognesa</li>
+                        <li>Spaghetti alla carbonara</li>
+                        <li>Arroz frito </li>
+                    </ol>
+                </li>
+                <li>Planes con amigos
+                    <ol>
+                        <li>Ruta por el monte</li>
+                        <li>Acampar bajo las estrellas</li>
+                        <li>Ir de bares</li>
+                    </ol>
+                </li>
+            </ul>
+        </section>
+        <section>
+            <h3>Lista de grupos musicales</h3>
+            <ol>
+                <li>Ctangana
+                    <ul>
+                        <li>Un Veneno</li>
+                        <li>Ingobernable</li>
+                        <li>Tu me dejaste de querer</li>
+                        <li>Demasiadas Mujeres</li>
+                    </ul>
+                </li>
+                <li>Estopa
+                    <ul>
+                        <li>Vino tinto</li>
+                        <li>Por la raja de tu falda</li>
+                        <li>Como Camarón</li>
+                        <li>Diablo</li>
+                        <li>El Run Run</li>
+                        <li>Camiseta de Rokanrol</li>
+                    </ul>
+                </li>
+                <li>Melendi
+                    <ul>
+                        <li>Barbie de extrarradio</li>
+                        <li>Tu jardín con enanitos</li>
+                        <li>Con la luna llena</li>
+                        <li>Caminando por la vida</li>
+                    </ul>
+                </li>
+                <li>Astola
+                    <ul>
+                        <li>Ermitaño</li>
+                        <li>Ventanilla</li>
+                        <li>Cojo el Saco y me retiro</li>
+                        <li>No hay miedo</li>
+                    </ul>
+                </li>
+                <li>Nikone
+                    <ul>
+                        <li>Lo Real</li>
+                        <li>Horizonte</li>
+                        <li>Blanco y negro</li>
+                        <li>Qué más da</li>
+                        <li>Puñales</li>
+                        <li>Boom Boom Clap</li>
+                    </ul>
+                </li>
+            </ol>
+        </section>
         <section>
         <h3>Lista de asignaturas preferidas</h3>
             <dl>
                 <dt>Bases de Datos</dt>
                 <dd>Introducción a las bases de datos y 
-                    la persistencia de los datos en nuestras aplicaciones</dd>
+                    la persistencia de los datos en nuestras aplicaciones, es realmente necesaria para
+                    cursar asignaturas de años siguientes como Repositorios de Información</dd>
                 <dt>Comunicación Persona Máquina</dt>
-                <dd>Introducción al desarrollo de interfaces de usuario y metodologías del mismo</dd>
+                <dd>Introducción al desarrollo de interfaces de usuario y metodologías del mismo. 
+                    Me encantó debido a que como alumnos desarrollamos un proyecto desde cero y 
+                    es muy gratificante hacerlo todo tú y verte capaz de ello</dd>
                 <dt>Tecnologías y Paradigmas de la Programación</dt>
                 <dd>Empleo de diferentes paradigmas de programación,
                     en especial, programación funcional</dd>
@@ -158,69 +171,43 @@
                 <dd>Utilización de la electrónica en sus 
                     componentes más básicos para crear cosas</dd>
             </dl>
+            <p>Universidad donde se cursan las asignaturas preferidas: <a href="https://www.uniovi.es/">Universidad de Oviedo</a></p>
         </section>
-        <section>
+        <aside>
             <h3>Temperatura media en Oviedo durante los últimos 10 años</h3>
             <table>
                 <caption> Temperaturas medias anuales</caption>
                 <tr>
                     <th>Año</th>
-                    <th>Temperatura</th>
-                </tr>
-                <tr>
                     <td>2012</td>
-                    <td>12.7</td>
-                </tr>
-                <tr>
                     <td>2013</td>
-                    <td>12.3</td>
-                </tr>
-                <tr>
                     <td>2014</td>
-                    <td>13.5</td>
-                </tr>
-                <tr>
                     <td>2015</td>
-                    <td>13.4</td>
-                </tr>
-                <tr>
                     <td>2016</td>
-                    <td>13.2</td>
-                </tr>
-                <tr>
                     <td>2017</td>
-                    <td>13.3</td>
-                </tr>
-                <tr>
                     <td>2018</td>
-                    <td>13.1</td>
-                </tr>
-                <tr>
                     <td>2019</td>
-                    <td>13.2</td>
-                </tr>
-                <tr>
                     <td>2020</td>
-                    <td>13.8</td>
-                </tr>
-                <tr>
                     <td>2021</td>
-                    <td>13.0</td>
+                    <td>2022</td>
                 </tr>
                 <tr>
-                    <td>2012</td>
+                    <th>Temperatura</th>
+                    <td>12.7</td>
+                    <td>12.3</td>
+                    <td>13.5</td>
+                    <td>13.4</td>
+                    <td>13.2</td>
+                    <td>13.3</td>
+                    <td>13.1</td>
+                    <td>13.2</td>
+                    <td>13.8</td>
+                    <td>13.0</td>
                     <td>14.0</td>
                 </tr>
             </table>
-        </section>
+            <p>Fuente de los datos: <a href="https://www.tutiempo.net/clima/ws-80150.html">Temperaturas medias anuales</a></p>
+        </aside>
     </main>
-    <aside>
-        <h3>Referencias</h3>
-        <p>Fuente de los datos: <a href="https://www.tutiempo.net/clima/ws-80150.html">Temperaturas medias anuales</a></p>
-        <p>Universidad donde se cursan las asignaturas preferidas: <a href="https://www.uniovi.es/">Universidad de Oviedo</a></p>
-    </aside>
-    <footer>
-        <p>Página en desarrollo</p>
-    </footer>
 </body>
 </html>
