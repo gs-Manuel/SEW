@@ -1,5 +1,43 @@
  /* Manuel González Santos  -   UO279387*/
  /**Especificidad 001*/
  header{
-    display:flexbox;
+    display:flex;
+    flex-direction: column;
  }
+ /*//En columna esta bien*/
+/**Especificidad: 001*/
+table {
+   table-layout: fixed;
+   width: 100%;
+ }
+ /**Especificidad: 002*/
+ tbody td {
+   text-align: center;
+ }
+ /**Especificidad: 002*/
+ tfoot th {
+   text-align: left;
+ }
+ /**Especificidad: 001*/
+ th {
+   letter-spacing: 0.1em;
+}
+
+@media only screen and (max-width: 465px) {
+  video {
+    width: 30%;
+    height: auto;
+    }
+}
+@media only screen and (max-width: 799px) {
+  video {
+    width: 40%;
+    height: auto;
+    }
+}
+@media only screen and (min-width: 800px) {
+  video {
+    width: 60%;
+    height: auto;
+    }
+}
