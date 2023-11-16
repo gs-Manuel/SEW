@@ -24,14 +24,15 @@ table {
 }
 
 @media only screen and (max-width: 465px) {
+  /**Especificidad:001*/
   video {
-    width: 30%;
+    width: 40%;
     height: auto;
     }
 }
 @media only screen and (max-width: 799px) {
   video {
-    width: 40%;
+    width: 50%;
     height: auto;
     }
 }
