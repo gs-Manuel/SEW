@@ -18,6 +18,7 @@
  h1{
     font-size:4em;
     text-transform: uppercase;
+    text-align: center;
  }
  /**Especificidad: 001*/
  h2{
@@ -26,22 +27,25 @@
  }
  /**Especificidad:001*/
  h3{
-  background-color: #E0B602;
-    font-size:2em;
+    font-size:1.5em;
  }
  @media only screen and (max-width: 465px) {
+   /**Especificidad:001*/
   nav{
     font-size:1.2em;
     padding: 0.1em;
   }
+   /**Especificidad:001*/
   h1{
     font-size:3em;
   }
+   /**Especificidad:001*/
   h2{
     font-size:2em;
   }
+   /**Especificidad:001*/
   h3{
-    font-size:1.5em;
+    font-size:1em;
   }
 }
  /**Especcificidad: 011*/
