@@ -7,18 +7,18 @@ class Memoria{
         this.secondCard = null;//indica la segunda carta que se ha dado la vuelta en esta interaccion
         // Objeto JSON con las tarjetas del juego de memoria
         this.elements = [
-            { element: "HTML5", source: "https://upload.wikimedia.org/wikipedia/commons/3/38/HTML5_Badge.svg", state: "faceDown" },
-            { element: "HTML5", source: "https://upload.wikimedia.org/wikipedia/commons/3/38/HTML5_Badge.svg", state: "faceDown" },
-            { element: "CSS3", source: "https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg", state: "faceDown" },
-            { element: "CSS3", source: "https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg", state: "faceDown" },
-            { element: "JS", source: "https://upload.wikimedia.org/wikipedia/commons/b/ba/Javascript_badge.svg", state: "faceDown" },
-            { element: "JS", source: "https://upload.wikimedia.org/wikipedia/commons/b/ba/Javascript_badge.svg", state: "faceDown" },
-            { element: "PHP", source: "https://upload.wikimedia.org/wikipedia/commons/2/27/PHP-logo.svg", state: "faceDown" },
-            { element: "PHP", source: "https://upload.wikimedia.org/wikipedia/commons/2/27/PHP-logo.svg", state: "faceDown" },
-            { element: "SVG", source: "https://upload.wikimedia.org/wikipedia/commons/4/4f/SVG_Logo.svg", state: "faceDown" },
-            { element: "SVG", source: "https://upload.wikimedia.org/wikipedia/commons/4/4f/SVG_Logo.svg", state: "faceDown" },
-            { element: "W3C", source: "https://upload.wikimedia.org/wikipedia/commons/5/5e/W3C_icon.svg", state: "faceDown" },
-            { element: "W3C", source: "https://upload.wikimedia.org/wikipedia/commons/5/5e/W3C_icon.svg", state: "faceDown" },
+            { element: "HTML5", source: "https://upload.wikimedia.org/wikipedia/commons/3/38/HTML5_Badge.svg", state: "unflip" },
+            { element: "HTML5", source: "https://upload.wikimedia.org/wikipedia/commons/3/38/HTML5_Badge.svg", state: "unflip" },
+            { element: "CSS3", source: "https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg", state: "unflip" },
+            { element: "CSS3", source: "https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg", state: "unflip" },
+            { element: "JS", source: "https://upload.wikimedia.org/wikipedia/commons/b/ba/Javascript_badge.svg", state: "unflip" },
+            { element: "JS", source: "https://upload.wikimedia.org/wikipedia/commons/b/ba/Javascript_badge.svg", state: "unflip" },
+            { element: "PHP", source: "https://upload.wikimedia.org/wikipedia/commons/2/27/PHP-logo.svg", state: "unflip" },
+            { element: "PHP", source: "https://upload.wikimedia.org/wikipedia/commons/2/27/PHP-logo.svg", state: "unflip" },
+            { element: "SVG", source: "https://upload.wikimedia.org/wikipedia/commons/4/4f/SVG_Logo.svg", state: "unflip" },
+            { element: "SVG", source: "https://upload.wikimedia.org/wikipedia/commons/4/4f/SVG_Logo.svg", state: "unflip" },
+            { element: "W3C", source: "https://upload.wikimedia.org/wikipedia/commons/5/5e/W3C_icon.svg", state: "unflip" },
+            { element: "W3C", source: "https://upload.wikimedia.org/wikipedia/commons/5/5e/W3C_icon.svg", state: "unflip" },
         ];
       this.shuffleElements();
     }
@@ -45,6 +45,7 @@ class Memoria{
         const imagen = document.createElement("img");
         imagen.setAttribute("src", elemento.source);
         imagen.setAttribute("alt", elemento.element);
+        imagen.setAttribute("data-state", elemento.state);
         carta.appendChild(imagen);
     
         // Agregar el nodo article a la sección del juego
@@ -68,40 +69,40 @@ class Memoria{
         this.secondCard.state = "revealed";
         this.resetBoard();
     }
-    flipCard(tarjeta){
-        if (this.lockBoard) return;
-        if (this.firstCard==null) return;
-        if (!this.hasFlippedCard) {
-            this.hasFlippedCard = true;
-            this.firstCard = tarjeta;
-            this.firstCard.state="flip";
-            this.firstCard.classList.add('flip');
+    flipCard(game){//El this en este metodo hace referencia a la carta sobre la que se lanza el evento
+        if (game.lockBoard) return;
+        if (game.firstCard==null) return;
+        if (!game.hasFlippedCard) {
+            game.hasFlippedCard = true;
+            game.firstCard = this;
+            game.firstCard.state="flip";
+            game.firstCard.dataset.state="flip";
             return;
         }
-        this.secondCard = tarjeta;
-        this.secondCard.state="flip";
-        this.secondCard.classList.add('flip');
-        this.checkForMatch();
+        game.secondCard = this;
+        game.secondCard.state="flip";
+        game.secondCard.dataset.state="flip";
+        game.checkForMatch();
     }
     // Implementa la lógica para revertir las cartas a su estado original (boca abajo)
     unflipCards(){
         this.lockBoard = true;
-        this.firstCard.state = "faceDown";
-        this.secondCard.state = "faceDown";
+        this.firstCard.state = "unflip";
+        this.secondCard.state = "unflip";
         setTimeout(() => {
-            this.firstCard.classList.remove('flip');
-            this.secondCard.classList.remove('flip');
+            this.firstCard.dataset.state="unflip";
+            this.secondCard.dataset.state="unflip";
             this.resetBoard(game);
         }, 1500);
     }
     addEventListeners(){
-        const tarjetas = document.querySelectorAll("article");
-        for(var i=0;i<tarjetas.length;i++){
-            tarjetas[i].setAttribute("onclick",this.flipCard.bind(this));
-        }
+        const cards = document.querySelectorAll("article");
+        cards.forEach((card) => {
+            card.addEventListener("click", this.flipCard.bind(card,this));//this hace referencia al juego de memoria, 
+                                                                            //bind permite pasar card como parametro -> el nuevo "this" será la card
+        });
     }
 }
 const juegoMemoria = new Memoria();
 juegoMemoria.createElements();
-
 juegoMemoria.addEventListeners();
