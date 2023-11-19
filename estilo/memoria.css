@@ -5,6 +5,7 @@ section{
     flex-wrap:wrap;
     flex-basis:20%;
 }
+
 /**Especificidad:001*/
 article{
     margin: 0.3em;
@@ -16,17 +17,22 @@ article{
     transform-style: preserve-3d;
     transition: transform 0.5s;
 }
-/**Especificidad:012*/
-article h3,
-article img{
+/**Especificidad:002*/
+article h3 {
+    /**Sobreescribo el estilo de layout.css*/
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     backface-visibility: hidden;
 }
 /**Especificidad:002*/
 article img {
+    backface-visibility: hidden;
     transform: rotateY(180deg);
 }
   /**Especificidad:011*/
-article[data-state='flip'] {
+article[data-state="flip"]{
     transform: rotateY(180deg);
 }
 /**Especificidad:001*/
@@ -35,14 +41,7 @@ h2{
     text-align: center; 
 }
 
-/**Especificidad:002*/
-article h3 {
-    /**Sobreescribo el estilo de layout.css*/
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-}
+
 @media only screen and (max-width: 465px) {
     /**Especificidad:001*/
     img {

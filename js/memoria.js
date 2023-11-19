@@ -20,7 +20,6 @@ class Memoria{
             { element: "W3C", source: "https://upload.wikimedia.org/wikipedia/commons/5/5e/W3C_icon.svg", state: "unflip" },
             { element: "W3C", source: "https://upload.wikimedia.org/wikipedia/commons/5/5e/W3C_icon.svg", state: "unflip" },
         ];
-      this.shuffleElements();
     }
     // Método para barajar los elementos utilizando el algoritmo de Durstenfeld
     shuffleElements() {
@@ -60,7 +59,9 @@ class Memoria{
     }
     checkForMatch() {
         if(this.firstCard==null || this.secondCard==null)return;
-        const isMatch = this.firstCard.element === this.secondCard.element && this.firstCard.source === this.secondCard.source
+        console.log("this.firstCard:", this.firstCard);
+        console.log("this.secondCard:", this.secondCard);
+        const isMatch = this.firstCard.dataset.element === this.secondCard.dataset.element;
         isMatch ? this.disableCards() : this.unflipCards();
     }
        // Implementa la lógica para desactivar las cartas (por ejemplo, cambiar el estado a "revealed")
@@ -71,7 +72,8 @@ class Memoria{
     }
     flipCard(game){//El this en este metodo hace referencia a la carta sobre la que se lanza el evento
         if (game.lockBoard) return;
-        if (game.firstCard==null) return;
+        if(this.state=="revealed")return;
+        if(this.state=="flip")return;
         if (!game.hasFlippedCard) {
             game.hasFlippedCard = true;
             game.firstCard = this;
@@ -92,7 +94,7 @@ class Memoria{
         setTimeout(() => {
             this.firstCard.dataset.state="unflip";
             this.secondCard.dataset.state="unflip";
-            this.resetBoard(game);
+            this.resetBoard();
         }, 1500);
     }
     addEventListeners(){
@@ -105,4 +107,5 @@ class Memoria{
 }
 const juegoMemoria = new Memoria();
 juegoMemoria.createElements();
+juegoMemoria.shuffleElements();
 juegoMemoria.addEventListeners();
