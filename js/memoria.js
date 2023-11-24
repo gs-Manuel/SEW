@@ -20,6 +20,7 @@ class Memoria{
             { element: "W3C", source: "https://upload.wikimedia.org/wikipedia/commons/5/5e/W3C_icon.svg", state: "unflip" },
             { element: "W3C", source: "https://upload.wikimedia.org/wikipedia/commons/5/5e/W3C_icon.svg", state: "unflip" },
         ];
+        this.shuffleElements();
     }
     // Método para barajar los elementos utilizando el algoritmo de Durstenfeld
     shuffleElements() {

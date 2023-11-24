@@ -18,17 +18,21 @@ article{
     transition: transform 0.5s;
 }
 /**Especificidad:002*/
+article h3, article img{
+    backface-visibility: hidden;
+}   
+/**Especificidad:002*/
 article h3 {
     /**Sobreescribo el estilo de layout.css*/
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
 }
 /**Especificidad:002*/
 article img {
-    backface-visibility: hidden;
     transform: rotateY(180deg);
 }
   /**Especificidad:011*/
