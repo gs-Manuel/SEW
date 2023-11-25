@@ -39,11 +39,6 @@ article img {
 article[data-state="flip"]{
     transform: rotateY(180deg);
 }
-/**Especificidad:001*/
-h2{
-    /**Sobreescribo el estilo de layout.css*/
-    text-align: center; 
-}
 
 
 @media only screen and (max-width: 465px) {

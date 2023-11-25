@@ -1,0 +1,33 @@
+/**Especificidad:001**/
+main {
+    display: grid;
+    grid-template-columns: repeat(9, auto);
+    height: 500px;
+    width: 500px;
+    gap: 0.1em;
+    border: 0.2em solid black;
+  }
+  /**Especificidad:002**/
+main>p {
+    display: grid;
+    padding: 0.1em;
+    margin: 0;
+    text-align: center;
+    border: 0.1em solid gray;
+  }
+  /**Especificidad:002**/
+ main>p[data-state="unclicked"] {
+    background-color: #B1D8B7; /* Estilo para celdas sin clic */
+}
+/**Especificidad:002**/
+main>p[data-state="clicked"] {
+    background-color: #94C973; /* Estilo para celdas con clic */
+}
+/**Especificidad:002**/
+main>p[data-state="blocked"] {
+    background-color: #76B947; /* Estilo para celdas bloqueadas */
+}
+/**Especificidad:002**/
+main>p[data-state="correct"] {
+    background-color: #76B947; /* Estilo para celdas correctas */
+}

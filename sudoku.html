@@ -4,16 +4,16 @@
 <head>
     <!-- Datos que describen el documento -->
     <meta charset="UTF-8" />
-    <title>Escritorio Virtual - Juegos - Juego de Memoria</title>
+    <title>Escritorio Virtual - Juegos - Sudoku</title>
     <meta name="author" content="Manuel González Santos"/>
-    <meta name="description" content="Juego de memoria"/>
+    <meta name="description" content="Juego de sudoku"/>
     <meta name ="keywords" content = "HTML5,"/>
     <meta name = "viewport" content="width=device-width,initial-scale=1.0"/>
     <link rel="stylesheet" type="text/css" href="estilo/estilo.css"/>
     <link rel="stylesheet" type="text/css" href="estilo/layout.css"/>
-    <link rel="stylesheet" type="text/css" href="estilo/memoria.css"/>
+    <link rel="stylesheet" type="text/css" href="estilo/sudoku.css"/>
     <link rel="icon" href="multimedia/imagenes/favicon.png" sizes="32x32" type="image/png"/>
-    <script src="js/memoria.js" defer></script>
+    
 </head>
 
 <body>
@@ -28,11 +28,16 @@
         <a tabindex="6" accesskey="v" href="viajes.html">Viajes</a>
         <a tabindex="7" accesskey="j" href="juegos.html">Juegos</a>
     </nav>
-    <h2>Juego de Memoria</h2>
-
-    <section>
+    <h2>Sudoku</h2>
+    <main>
        
-    </section>
+    </main>
     
 </body>
+<script src="js/sudoku.js"></script>
+<script>
+    const sudoku = new Sudoku();
+    sudoku.paintSudoku();
+    onkeydown = sudoku.addKeyBoardListener();
+</script>
 </html>
