@@ -20,6 +20,7 @@ article{
 /**Especificidad:002*/
 article h3, article img{
     backface-visibility: hidden;
+    align-items: center;
 }   
 /**Especificidad:002*/
 article h3 {

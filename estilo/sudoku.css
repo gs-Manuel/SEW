@@ -1,33 +1,70 @@
+
 /**Especificidad:001**/
 main {
     display: grid;
     grid-template-columns: repeat(9, auto);
-    height: 500px;
-    width: 500px;
+    height: 10em;
+    width: 10em; 
     gap: 0.1em;
-    border: 0.2em solid black;
+    border: 0.4em solid black;
   }
   /**Especificidad:002**/
 main>p {
     display: grid;
-    padding: 0.1em;
+    padding: 0.7em;
     margin: 0;
     text-align: center;
     border: 0.1em solid gray;
+    font-size: 1.3em;
   }
-  /**Especificidad:002**/
+/**Especificidad:011**/
+  p:nth-child(3n){
+    border-right: 0.2em solid black;
+  }
+  /**Especificidad:021**/
+  p:nth-child(n+19):nth-child(-n+27){
+    border-bottom: 0.2em solid black;
+  }
+  /**Especificidad:021**/
+  p:nth-child(n+46):nth-child(-n+54){
+    border-bottom: 0.2em solid black;
+  }
+  /**Especificidad:012**/  
  main>p[data-state="unclicked"] {
     background-color: #B1D8B7; /* Estilo para celdas sin clic */
 }
-/**Especificidad:002**/
+/**Especificidad:012**/
 main>p[data-state="clicked"] {
     background-color: #94C973; /* Estilo para celdas con clic */
 }
-/**Especificidad:002**/
+/**Especificidad:012**/
 main>p[data-state="blocked"] {
     background-color: #76B947; /* Estilo para celdas bloqueadas */
 }
-/**Especificidad:002**/
+/**Especificidad:012**/
 main>p[data-state="correct"] {
     background-color: #76B947; /* Estilo para celdas correctas */
+}
+/**Cuando se lanza la media query, se aplica mal los bordes**/
+@media only screen and (max-width: 465px) {
+  /**Especificidad:001*/
+  main {
+      width: 40%;
+      height: 40%;
+      }
+}
+@media only screen and (max-width: 799px) {
+  /**Especificidad:001*/
+  main {
+      width: 60%;
+      height: 60%;
+      }
+
+}
+@media only screen and (min-width: 800px) {
+  /**Especificidad:001*/
+  main {
+      width: 90%;
+      height: 90%;
+      }
 }

@@ -12,7 +12,7 @@
     <meta name = "viewport" content="width=device-width,initial-scale=1.0"/>
     <link rel="stylesheet" type="text/css" href="estilo/estilo.css"/>
     <link rel="icon" href="multimedia/imagenes/favicon.png" sizes="32x32" type="image/png"/>
-    <script src="js/fondo.js" defer></script>
+    
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     
 </head>
@@ -29,6 +29,27 @@
         <a tabindex="6" accesskey="v" href="viajes.html">Viajes</a>
         <a tabindex="7" accesskey="j" href="juegos.html">Juegos</a>
     </nav>
-    <p>En desarrollo</p>
+   <article>
+
+   </article>
 </body>
+<script src="js/pais.js" ></script>
+<script src="js/fondo.js" ></script>
+<script>
+    $(document).ready(function(imageURL){//Este uso de callback es valido??
+        var pais = new Pais("Marruecos", "Rabat", 36000000);
+        var fondo = new Fondo(pais);
+        fondo.getImagen(function(imagenURL){
+            $("article").css({
+                "background-image": `url('${imagenURL}')`,
+                "background-repeat": "no-repeat",
+                'height': '100vh',
+                "background-size": "cover",
+                "background-position": "center center"
+                
+            });
+        });
+    });
+
+</script>
 </html>

@@ -11,8 +11,10 @@
  }
  /**Especificidad: 001*/
  nav{
+    display:flex;
+    justify-content: space-around;
     font-size: 1.3em;
-    padding: 0.1em;
+    padding: 0.2em;
  }
   /**Especificidad: 001*/
  h1{
