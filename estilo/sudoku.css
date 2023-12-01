@@ -1,16 +1,18 @@
 
 /**Especificidad:001**/
-main {
+/**Sobreescribe el main de estilo.css**/
+main{
     display: grid;
     grid-template-columns: repeat(9, auto);
     height: 10em;
     width: 10em; 
     gap: 0.1em;
     border: 0.4em solid black;
+    justify-content: normal;
+   align-items: normal;
   }
   /**Especificidad:002**/
 main>p {
-    display: grid;
     padding: 0.7em;
     margin: 0;
     text-align: center;
@@ -49,15 +51,21 @@ main>p[data-state="correct"] {
 @media only screen and (max-width: 465px) {
   /**Especificidad:001*/
   main {
-      width: 40%;
-      height: 40%;
+      width: 60%;
+      height: 60%;
+      }
+      main > p{
+        padding: 0.2em;
       }
 }
 @media only screen and (max-width: 799px) {
   /**Especificidad:001*/
   main {
-      width: 60%;
-      height: 60%;
+      width: 80%;
+      height: 80%;
+      }
+      main > p{
+        padding: 0.4em;
       }
 
 }
@@ -67,4 +75,7 @@ main>p[data-state="correct"] {
       width: 90%;
       height: 90%;
       }
+  main > p{
+    padding: 0.7em;
+  }
 }

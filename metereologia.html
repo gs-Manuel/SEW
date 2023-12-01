@@ -12,6 +12,7 @@
     <link rel="stylesheet" type="text/css" href="estilo/estilo.css"/>
     <link rel="stylesheet" type="text/css" href="estilo/layout.css"/>
     <link rel="icon" href="multimedia/imagenes/favicon.png" sizes="32x32" type="image/png"/>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     
 </head>
 <body>
@@ -27,18 +28,27 @@
         <a tabindex="7" accesskey="j" href="juegos.html">Juegos</a>
     </nav>
     <h2>Meteorología</h2>
+    <article>
+
+    </article>
+    <h3>Previsión del tiempo durante los próximos 5 días</h3>
+    <main>
+       
+    </main>
 </body>
 <!--Importacion a js despues de body por que hasta que no se cree el body no se pueden hacer query selector-->
 <script src="js/pais.js"></script>
 <script>
     var pais = new Pais("Marruecos", "Rabat", 36000000);
-    document.write("<h3>"+pais.getNombre()+"</h3>")
-    document.write("<h4> Información principal</h4>")
-    document.write("<p> Capital: "+pais.getCapital()+"</p>")
-    document.write("<p> Número de habitantes: "+pais.getCantidadPoblacion()+" personas</p>")
-    pais.escribirCoordenadasCapital();
-    document.write("<h4> Más información</h4>")
-    document.write(pais.getInformacionSecundario());
+    var infoMarruecos = document.querySelector("article");
+    infoMarruecos.innerHTML = "<h3>"+pais.getNombre()+"</h3>";
+    infoMarruecos.innerHTML += "<h4> Información principal</h4>";   
+    infoMarruecos.innerHTML += "<p> Capital: "+pais.getCapital()+"</p>";
+    infoMarruecos.innerHTML += "<p> Número de habitantes: "+pais.getCantidadPoblacion()+" personas</p>";
+    infoMarruecos.innerHTML += pais.escribirCoordenadasCapital();
+    infoMarruecos.innerHTML += "<h4> Más información</h4>";
+    infoMarruecos.innerHTML += pais.getInformacionSecundario();
+    pais.obtenerPrevisionTiempo();
     document.close();
 </script>
 </html>

@@ -16,17 +16,20 @@
     font-size: 1.3em;
     padding: 0.2em;
  }
+ /**Especificidad: 001*/
+ h1,h2,h3{
+  text-align: center;
+ }
   /**Especificidad: 001*/
  h1{
     font-size:4em;
     text-transform: uppercase;
-    text-align: center;
+
  }
  /**Especificidad: 001*/
  h2{
   background-color: #B0B602;
     font-size:3em;
-    text-align: center; 
  }
  /**Especificidad:001*/
  h3{
@@ -95,5 +98,22 @@ dt {
 table {
   background-color: #ECF86F;
    border: 0.1em solid rgb(80, 143, 12);
+ }
+ /**Especificidad: 001*/
+ main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ }
+ /**Especificidad: 002*/
+ main>section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 0.1em solid rgb(80, 143, 12);
+  border-radius: 1em;
+  margin:0.5em;
+  padding:0.5em;
+  background-color: #bae498;
  }
 
