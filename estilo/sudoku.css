@@ -7,7 +7,7 @@ main{
     height: 10em;
     width: 10em; 
     gap: 0.1em;
-    border: 0.4em solid black;
+    border: 0.2em solid black;
     justify-content: normal;
    align-items: normal;
   }

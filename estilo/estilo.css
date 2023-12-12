@@ -40,6 +40,8 @@
   nav{
     font-size:1.2em;
     padding: 0.1em;
+    display: grid;
+    grid-template-columns: repeat(4,auto); /* Una columna que se ajustará automáticamente al contenido */
   }
    /**Especificidad:001*/
   h1{

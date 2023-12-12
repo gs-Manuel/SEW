@@ -28,7 +28,7 @@
         <a tabindex="7" accesskey="j" href="juegos.html">Juegos</a>
     </nav>
     <h2>Meteorología</h2>
-    <h3>Previsión del tiempo durante los próximos 5 días</h3>
+    
 </body>
 <!--Importacion a js despues de body por que hasta que no se cree el body no se pueden hacer query selector-->
 <script src="js/pais.js"></script>
@@ -44,6 +44,7 @@
     pais.escribirCoordenadasCapital();
     infoMarruecos.innerHTML += "<h4> Más información</h4>";
     infoMarruecos.innerHTML += pais.getInformacionSecundario();
+    infoMarruecos.innerHTML += "<h3>Previsión del tiempo durante los próximos 5 días</h3>";
     pais.obtenerPrevisionTiempo();
     document.close();
 </script>
