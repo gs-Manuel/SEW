@@ -28,24 +28,20 @@
         <a tabindex="7" accesskey="j" href="juegos.html">Juegos</a>
     </nav>
     <h2>Meteorología</h2>
-    <article>
-
-    </article>
     <h3>Previsión del tiempo durante los próximos 5 días</h3>
-    <main>
-       
-    </main>
 </body>
 <!--Importacion a js despues de body por que hasta que no se cree el body no se pueden hacer query selector-->
 <script src="js/pais.js"></script>
 <script>
     var pais = new Pais("Marruecos", "Rabat", 36000000);
+    document.write("<article></article>");
+    
     var infoMarruecos = document.querySelector("article");
     infoMarruecos.innerHTML = "<h3>"+pais.getNombre()+"</h3>";
     infoMarruecos.innerHTML += "<h4> Información principal</h4>";   
     infoMarruecos.innerHTML += "<p> Capital: "+pais.getCapital()+"</p>";
     infoMarruecos.innerHTML += "<p> Número de habitantes: "+pais.getCantidadPoblacion()+" personas</p>";
-    infoMarruecos.innerHTML += pais.escribirCoordenadasCapital();
+    pais.escribirCoordenadasCapital();
     infoMarruecos.innerHTML += "<h4> Más información</h4>";
     infoMarruecos.innerHTML += pais.getInformacionSecundario();
     pais.obtenerPrevisionTiempo();

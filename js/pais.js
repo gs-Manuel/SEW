@@ -41,13 +41,19 @@ class Pais{
     }
     escribirCoordenadasCapital() {
         //Escribir despues del titulo de más informacion
-        document.write("<p> Coordenadas de la capital</p>")
-        document.write(`
-            <ul>
-                <li>Latitud: ${this.getCoordenadasCapital()[0]}</li>    
-                <li>Longitud: ${this.getCoordenadasCapital()[1]}</li>
-            </ul>
-            `)
+        document.createElement("article");
+        var article = document.querySelector("article");
+        var p = document.createElement("p");
+        p.textContent = "Coordenadas de la capital:";
+        var ul = document.createElement("ul");
+        var liLatitud = document.createElement("li");
+        var liLongitud = document.createElement("li");
+        liLatitud.textContent = "Latitud: " + this.getCoordenadasCapital()[0];
+        liLongitud.textContent = "Longitud: " + this.getCoordenadasCapital()[1];
+        article.appendChild(p);
+        ul.appendChild(liLatitud);
+        ul.appendChild(liLongitud);
+        article.appendChild(ul);
     }
 
     obtenerPrevisionTiempo() {
@@ -68,6 +74,7 @@ class Pais{
             });
     }
     imprimirPrevisionTiempo(data) {
+        $("article").after("<main></main>")
         var minTempDay = Number.POSITIVE_INFINITY;
         var maxTempDay = -100000;
         data.list.forEach(element => {
