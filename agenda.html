@@ -11,6 +11,7 @@
     <meta name = "viewport" content="width=device-width,initial-scale=1.0"/>
     <link rel="stylesheet" type="text/css" href="estilo/estilo.css"/>
     <link rel="icon" href="multimedia/imagenes/favicon.png" sizes="32x32" type="image/png"/>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -26,6 +27,19 @@
         <a tabindex="7" accesskey="j" href="juegos.html">Juegos</a>
     </nav>
     <h2>Agenda</h2>
-    <p>En desarrollo</p>
+    <main>
+        <button>Mostrar Carreras</button>
+    </main>
 </body>
+
+<script src="js/agenda.js"></script>
+<script>
+    document.write("<main></main>");
+    var agenda = new Agenda();
+    $(document).ready(function () {
+        $("button").on("click", function () {
+            agenda.getCurrentRaces();
+        });
+    });
+</script>
 </html>

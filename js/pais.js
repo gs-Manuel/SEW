@@ -74,7 +74,7 @@ class Pais{
             });
     }
     imprimirPrevisionTiempo(data) {
-        $("article").after("<main></main>")
+        $("article").after("<main></main>");
         var minTempDay = Number.POSITIVE_INFINITY;
         var maxTempDay = -100000;
         data.list.forEach(element => {
@@ -97,6 +97,4 @@ class Pais{
             }
         });
     }
-
-
 }
