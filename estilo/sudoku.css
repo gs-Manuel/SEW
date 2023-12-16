@@ -23,6 +23,10 @@ main>p {
   p:nth-child(3n){
     border-right: 0.2em solid black;
   }
+  /**Especificidad:011 - Sobreescribe la regla anterior para los bordes**/
+  p:nth-child(9n){
+    border-right: 0.1em solid gray;
+  }
   /**Especificidad:021**/
   p:nth-child(n+19):nth-child(-n+27){
     border-bottom: 0.2em solid black;

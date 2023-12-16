@@ -4,6 +4,25 @@
     display:flex;
     flex-direction: column;
  }
+  /**Especificidad: 001*/
+  nav{
+    display:grid;
+    grid-template-columns: repeat(4,auto); 
+  }
+   /**Especificidad: 002*/
+ nav>a{
+  text-align: center;
+  margin: 0.5em;
+ }
+  /**Especificidad: 001*/
+  h1,h2,h3{
+    text-align: center;
+   }
+    /**Especificidad: 001*/
+ ul,ol,dl {
+  /**Sobreescribe la propiedad left de padding*/
+  padding-left: 2em;
+}
  /*//En columna esta bien*/
 /**Especificidad: 001*/
 table {
@@ -22,6 +41,21 @@ table {
  th {
    letter-spacing: 0.1em;
 }
+ /**Especificidad: 001*/
+ main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ }
+  /**Especificidad: 002*/
+  main>section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 1em;
+    margin:0.5em;
+    padding:0.5em;
+   }
 
 @media only screen and (max-width: 465px) {
   /**Especificidad:001*/
