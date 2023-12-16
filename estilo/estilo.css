@@ -14,9 +14,8 @@
  nav{
   display:grid;
   grid-template-columns: repeat(4,auto); 
-  justify-content: space-around;
+  
   font-size: 1.3em;
-
   color:#003060;
  }
  /**Especificidad: 002*/
@@ -25,7 +24,7 @@
   text-align: center;
   text-decoration: none;
   background-color:#93bbc8;
-  margin: 1em;
+  margin: 0.5em;
  }
  /**Especificidad: 001*/
  h1,h2,h3{
@@ -47,8 +46,15 @@
  h3{
     font-size:1.5em;
  }
- @media only screen and (max-width: 465px) {
-
+ @media only screen and (max-width: 600px) {
+ /**Especificidad: 002*/
+ nav>a{
+  border-color: #003060;
+  text-align: center;
+  text-decoration: none;
+  background-color:#93bbc8;
+  margin: 0.1em;
+ }
    /**Especificidad:001*/
   h1{
     font-size:3em;
